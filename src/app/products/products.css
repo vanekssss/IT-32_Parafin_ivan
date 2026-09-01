@@ -1,0 +1,17 @@
+.products-section {
+  padding: 40px 20px;
+}
+
+.products-section h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #1e3a8a;
+  margin-bottom: 35px;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}

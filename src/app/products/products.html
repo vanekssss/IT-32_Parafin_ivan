@@ -1,0 +1,28 @@
+<section class="products-section">
+  <h2>Наші товари</h2>
+
+  <div class="products">
+
+    <app-product-card
+      productName="Ноутбук ASUS"
+      [price]="25000"
+      description="Ноутбук для навчання та роботи."
+      (buy)="buyProduct($event)">
+    </app-product-card>
+
+    <app-product-card
+      productName="Мишка Logitech"
+      [price]="1200"
+      description="Зручна мишка для роботи та ігор."
+      (buy)="buyProduct($event)">
+    </app-product-card>
+
+    <app-product-card
+      productName="Клавіатура HyperX"
+      [price]="2500"
+      description="Механічна клавіатура для геймерів."
+      (buy)="buyProduct($event)">
+    </app-product-card>
+
+  </div>
+</section>

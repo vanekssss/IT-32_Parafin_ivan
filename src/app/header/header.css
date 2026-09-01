@@ -1,0 +1,28 @@
+header {
+  background: #1e3a8a;
+  color: white;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
