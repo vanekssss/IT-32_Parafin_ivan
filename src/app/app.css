@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 50px 20px;
+  background: #f4f5f7;
+  color: #222;
+}
+
+header,
+.form-section,
+.container > section {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  margin-bottom: 35px;
+}
+
+header h1 {
+  margin: 0 0 10px;
+  font-size: 42px;
+  color: #222;
+}
+
+header p {
+  margin: 0;
+  color: #777;
+  font-size: 16px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* Форма */
+
+.form-section {
+  padding: 25px;
+  margin-bottom: 45px;
+
+  background: white;
+  border-radius: 16px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.field input {
+  padding: 12px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  outline: none;
+  font-size: 14px;
+}
+
+.field input:focus {
+  border-color: #6366f1;
+}
+
+.add-button,
+.delete-button {
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-button {
+  margin-top: 20px;
+  padding: 12px 20px;
+
+  background: #6366f1;
+  color: white;
+}
+
+.add-button:hover {
+  background: #4f46e5;
+}
+
+/* Фільми */
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.movie {
+  position: relative;
+
+  padding: 25px;
+
+  background: white;
+  border-radius: 16px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+  transition: 0.2s;
+}
+
+.movie:hover {
+  transform: translateY(-4px);
+}
+
+.movie-number {
+  color: #999;
+  font-size: 13px;
+}
+
+.movie h3 {
+  margin: 15px 0 10px;
+  font-size: 22px;
+}
+
+.movie p {
+  color: #777;
+}
+
+.rating {
+  margin: 15px 0;
+
+  color: #e59f00;
+  font-weight: bold;
+}
+
+.delete-button {
+  width: 100%;
+  padding: 10px;
+
+  background: #fff0f0;
+  color: #e04444;
+}
+
+.delete-button:hover {
+  background: #ffe0e0;
+}
+
+/* Адаптивність */
+
+@media (max-width: 800px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .movies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  header h1 {
+    font-size: 32px;
+  }
+
+  .movies {
+    grid-template-columns: 1fr;
+  }
+}
