@@ -1,0 +1,15 @@
+<div *ngIf="movie; else notFound">
+
+  <h1>{{ movie.title }}</h1>
+
+  <p>Рік: {{ movie.year }}</p>
+
+  <p>Рейтинг: {{ movie.rating }}/10</p>
+
+</div>
+
+<ng-template #notFound>
+
+  <h1>Фільм не знайдено</h1>
+
+</ng-template>
