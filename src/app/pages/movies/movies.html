@@ -1,0 +1,45 @@
+<div class="movies-header">
+  <div>
+    <div class="section-label">MOVIE COLLECTION</div>
+    <h1>Каталог фільмів</h1>
+    <p>Знайди історію, яку захочеться переглянути сьогодні.</p>
+  </div>
+
+  <a routerLink="/movies/add" class="add-button">
+    + Додати фільм
+  </a>
+</div>
+
+<div class="movies-grid">
+
+  <article class="movie-item" *ngFor="let movie of movies">
+
+    <div class="movie-poster">
+      <div class="poster-number">
+        {{ movie.id }}
+      </div>
+
+      <div class="play-icon">▶</div>
+    </div>
+
+    <div class="movie-content">
+
+      <h2>{{ movie.title }}</h2>
+
+      <div class="director">
+        <span>DIRECTOR</span>
+        {{ movie.director }}
+      </div>
+
+      <p>{{ movie.description }}</p>
+
+      <a [routerLink]="['/movie', movie.id]" class="details-button">
+        Детальніше
+        <span>→</span>
+      </a>
+
+    </div>
+
+  </article>
+
+</div>

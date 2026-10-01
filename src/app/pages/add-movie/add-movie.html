@@ -1,0 +1,113 @@
+<div class="form-page">
+
+  <div class="form-header">
+    <div class="form-label">NEW MOVIE</div>
+
+    <h1>Додати фільм</h1>
+
+    <p>
+      Додай новий фільм до своєї колекції.
+    </p>
+  </div>
+
+  <form #movieForm="ngForm" (ngSubmit)="addMovie(movieForm)" class="movie-form">
+
+    <div class="form-group">
+      <label for="title">Назва фільму</label>
+
+      <input
+        id="title"
+        type="text"
+        name="title"
+        [(ngModel)]="movie.title"
+        required
+        minlength="3"
+        maxlength="50"
+        #titleRef="ngModel"
+        placeholder="Наприклад, Interstellar"
+      >
+
+      <div class="error" *ngIf="submitted && titleRef.invalid">
+
+        <small *ngIf="titleRef.errors?.['required']">
+          Поле обов'язкове
+        </small>
+
+        <small *ngIf="titleRef.errors?.['minlength']">
+          Мінімум 3 символи
+        </small>
+
+        <small *ngIf="titleRef.errors?.['maxlength']">
+          Максимум 50 символів
+        </small>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="director">Режисер</label>
+
+      <input
+        id="director"
+        type="text"
+        name="director"
+        [(ngModel)]="movie.director"
+        required
+        minlength="3"
+        maxlength="50"
+        #directorRef="ngModel"
+        placeholder="Наприклад, Christopher Nolan"
+      >
+
+      <div class="error" *ngIf="submitted && directorRef.invalid">
+
+        <small *ngIf="directorRef.errors?.['required']">
+          Поле обов'язкове
+        </small>
+
+        <small *ngIf="directorRef.errors?.['minlength']">
+          Мінімум 3 символи
+        </small>
+
+        <small *ngIf="directorRef.errors?.['maxlength']">
+          Максимум 50 символів
+        </small>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Опис</label>
+
+      <textarea
+        id="description"
+        name="description"
+        [(ngModel)]="movie.description"
+        required
+        minlength="10"
+        #descriptionRef="ngModel"
+        placeholder="Напиши короткий опис фільму..."
+        rows="6"
+      ></textarea>
+
+      <div class="error" *ngIf="submitted && descriptionRef.invalid">
+
+        <small *ngIf="descriptionRef.errors?.['required']">
+          Поле обов'язкове
+        </small>
+
+        <small *ngIf="descriptionRef.errors?.['minlength']">
+          Мінімум 10 символів
+        </small>
+
+      </div>
+    </div>
+
+    <button type="submit" class="submit-button">
+      <span>Додати фільм</span>
+      <span>→</span>
+    </button>
+
+  </form>
+
+</div>

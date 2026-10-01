@@ -1,0 +1,58 @@
+<div *ngIf="movie; else notFound" class="detail-page">
+
+  <a routerLink="/movies" class="back-link">
+    ← Назад до каталогу
+  </a>
+
+  <div class="detail-card">
+
+    <div class="detail-poster">
+      <span>{{ movie.id }}</span>
+      <div>▶</div>
+    </div>
+
+    <div class="detail-content">
+
+      <div class="detail-label">MOVIE DETAILS</div>
+
+      <h1>{{ movie.title }}</h1>
+
+      <div class="director-box">
+        <span>РЕЖИСЕР</span>
+        <strong>{{ movie.director }}</strong>
+      </div>
+
+      <div class="description-box">
+        <span>ОПИС</span>
+        <p>{{ movie.description }}</p>
+      </div>
+
+      <a routerLink="/movies" class="back-button">
+        Повернутися до фільмів
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+<ng-template #notFound>
+
+  <div class="not-found">
+
+    <div class="error-number">404</div>
+
+    <h1>Фільм не знайдено</h1>
+
+    <p>
+      Схоже, такого фільму немає у нашому каталозі.
+    </p>
+
+    <a routerLink="/movies" class="back-button">
+      Повернутися до каталогу
+    </a>
+
+  </div>
+
+</ng-template>
